@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root {
+  --font-poppins: Poppins, sans-serif;
+  --background-color: #FAFAFA;
+  --brand-color: #5F8ED9;
+  --secondary-brand-color: #B9D6FA;
+}
