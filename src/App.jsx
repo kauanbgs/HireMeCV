@@ -1,21 +1,30 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './things/header'
 import Content from './things/content'
-import '@fontsource/montserrat';
+import CriadorCurriculo from './things/criadorCurriculo'
+import '@fontsource/montserrat'
+import './App.css'
 
-
-function App() {
-  // const [count, setCount] = useState(0)
+function Layout() {
+  const location = useLocation()
+  const showHeaderAndContent = location.pathname === '/'  // só mostra na raiz
 
   return (
     <div className="w-screen h-screen bg-white flex flex-col">
-      <Header />
-      <Content />
+      {showHeaderAndContent && <Header />}
+      {showHeaderAndContent && <Content />}
+      {!showHeaderAndContent && <CriadorCurriculo />}
     </div>
-  
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/*" element={<Layout />} />
+      </Routes>
+    </Router>
   )
 }
 

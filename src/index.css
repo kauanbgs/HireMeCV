@@ -6,3 +6,12 @@
   --brand-color: #5F8ED9;
   --secondary-brand-color: #B9D6FA;
 }
+
+input::placeholder {
+  font-weight: 300; /* light */
+  font-size: 1.5rem; /* exemplo: 12px */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 5px;
+}
